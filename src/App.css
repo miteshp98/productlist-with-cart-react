@@ -1,0 +1,19 @@
+#root {
+    padding: 4rem;
+
+    @media screen and (max-width: 768px) {
+        padding-inline: 2rem;
+    }
+    @media screen and (max-width: 475px) {
+        padding-inline: 1rem;
+    }
+}
+
+.container {
+    display: flex;
+    gap: 1.5rem;
+
+    @media screen and (max-width: 1180px) {
+        flex-direction: column;
+    }
+}

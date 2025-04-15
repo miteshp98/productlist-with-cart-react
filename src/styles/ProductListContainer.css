@@ -1,0 +1,27 @@
+.product-list-container {
+    width: 100%;
+}
+
+.product-title {
+    color: var(--Rose-900);
+    font-size: 2.5rem;
+}
+
+.product-list {
+    list-style: none;
+    max-width: 1200px;
+
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    justify-items: center;
+    gap: 1.5rem;
+
+    @media screen and (max-width: 1500px) {
+        max-width: 900px;
+    }
+
+    @media screen and (max-width: 1180px) {
+        max-width: 100%;
+    }
+}

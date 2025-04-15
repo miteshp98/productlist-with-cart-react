@@ -1,0 +1,46 @@
+.order-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1rem;
+
+    border-bottom: 1px solid hsla(6, 20%, 60%, 0.293);
+}
+.order-item-left-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    > img {
+        width: 60px;
+        border-radius: 5px;
+    }
+}
+
+.order-info {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.order-name {
+    color: var(--Rose-900);
+    font-weight: 700;
+}
+
+.order-quantity {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--Red);
+}
+
+.order-price {
+    color: var(--Rose-300);
+    font-weight: 600;
+}
+
+.order-total-price {
+    color: var(--Rose-900);
+    font-weight: 600;
+}

@@ -1,0 +1,124 @@
+.product-item {
+    width: 100%;
+    margin-block: 2rem;
+    max-width: 350px;
+}
+
+.product-img {
+    width: 100%;
+    position: relative;
+
+    picture > img {
+        border-radius: 10px;
+        width: 100%;
+    }
+}
+
+.product-img--border {
+    border: 3px solid var(--Red);
+}
+
+.product-cta {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.product-add-to-cart,
+.product-counter {
+    width: 180px;
+    height: 45px;
+    border-radius: 50px;
+    border: 1px solid var(--Rose-300);
+
+    display: flex;
+    align-items: center;
+}
+
+.product-add-to-cart {
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--Rose-900);
+    transition: all 0.3s ease-in-out;
+    transform: rotateX(0deg);
+    opacity: 1;
+
+    &:hover {
+        color: var(--Red);
+        border-color: var(--Red);
+    }
+}
+
+.product-add-to-cart--hide {
+    transform: rotateX(180deg);
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.product-counter {
+    position: absolute;
+    top: 0;
+    padding: 10px;
+
+    justify-content: space-between;
+    color: white;
+    background-color: var(--Red);
+    border-color: var(--Red);
+
+    transform: rotateX(180deg);
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 0.3s ease-in-out;
+
+    > button {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid white;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    > p {
+        font-family: 600;
+    }
+}
+
+.product-counter--show {
+    transform: rotateX(0);
+    z-index: 1;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.product-info {
+    margin-top: 2.5rem;
+}
+
+.product-type {
+    color: var(--Rose-300);
+    font-size: 1.05rem;
+}
+
+.product-name {
+    color: var(--Rose-900);
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-block: 5px;
+}
+
+.product-price {
+    color: var(--Red);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
