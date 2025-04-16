@@ -1,5 +1,7 @@
 .product-list-container {
     width: 100%;
+    position: relative;
+    min-height: 90dvh;
 }
 
 .product-title {
