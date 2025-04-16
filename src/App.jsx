@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
+import { useFetch } from "./Hooks/useFetch";
 import "./App.css";
 
 import CartContainer from "./components/CartContainer";
 import ProductListContainer from "./components/ProductsListContainer";
 import ProductList from "./components/productList/ProductList";
 import ConfirmOrderModal from "./components/ConfirmOrderModal";
+import Loader from "./components/ui/Loader";
 
-import { data } from "./data";
 import { updateCartQuantity } from "./utils/updateCartQuantity";
 
 function App() {
@@ -15,9 +16,10 @@ function App() {
         return JSON.parse(storedValue) || [];
     });
     const [isConfirmed, setIsConfirmed] = useState(false);
+    const { isLoading, productList } = useFetch("/data.json");
 
     function handleAddToCart(id) {
-        const selectedProduct = data.find((prodcut) => prodcut.id === id);
+        const selectedProduct = productList.find((prodcut) => prodcut.id === id);
         if (!selectedProduct) return;
 
         setCartList((prevCart) => {
@@ -56,12 +58,16 @@ function App() {
     return (
         <div className="container">
             <ProductListContainer>
-                <ProductList
-                    productList={data}
-                    onAddToCart={handleAddToCart}
-                    cartItems={cartItems}
-                    onQuantityChange={handleUpdateQuantity}
-                />
+                {isLoading ? (
+                    <Loader />
+                ) : (
+                    <ProductList
+                        productList={productList}
+                        onAddToCart={handleAddToCart}
+                        cartItems={cartItems}
+                        onQuantityChange={handleUpdateQuantity}
+                    />
+                )}
             </ProductListContainer>
             <CartContainer
                 cartList={cartItems}
